@@ -1,0 +1,80 @@
+<div class="imgControl" ng-class="{ display: showMe }">
+	<!-- 这个地方的id的写入 -->
+	<img ng-src="/data/models/{{ modelId }}/{{ choosed }}" ng-click="toggle()">
+	<div class="popPanel">
+		<div class="jiantou"></div>
+
+		<div w-texture-upload create-newone="createNewone" return-to="choosed" model-id="{{modelId}}"></div>
+
+		<div ng-hide="createNewone">
+			<div class="aSectionRow">
+				<div class="percent100">
+					<select ng-model='choosed' ng-options="t.texture as t.name for t in textures">
+					</select>
+				</div>
+			</div>
+			<div ng-show='choosed'>
+			<div class="aSectionRow">
+				<div class="percent40">
+					<h5 class='label'>Repeat:</h5>
+				</div>
+				<div class="percent30">
+					<input type="text" ng-model="repeat[0]" format />
+				</div>
+				<div class="percent30">
+					<input type="text" ng-model="repeat[1]" format />
+				</div>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent40">
+					<h5 class='label'>Wrap:</h5>
+				</div>
+				<div class="percent30">
+					<select ng-model="wrap[0]">
+						<option value="clamp">clamp</option>
+						<option value="repeat">repeat</option>
+						<option value="mirror">mirror</option>
+					</select>
+				</div>
+				<div class="percent30">
+					<select ng-model="wrap[1]">
+						<option value="clamp">clamp</option>
+						<option value="repeat">repeat</option>
+						<option value="mirror">mirror</option>
+					</select>
+				</div>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent40">
+					<h5 class='label'>magFilter:</h5>
+				</div>
+				<div class="percent60">
+					<select ng-model="filter[0]">
+						<option value="NearestFilter">NearestFilter</option>
+						<option value="NearestMipMapNearestFilter">NearestMipMapNearestFilter</option>
+						<option value="NearestMipMapLinearFilter">NearestMipMapLinearFilter</option>
+						<option value="LinearFilter">LinearFilter</option>
+						<option value="LinearMipMapNearestFilter">LinearMipMapNearestFilter</option>
+						<option value="LinearMipMapLinearFilter">LinearMipMapLinearFilter</option>
+					</select>
+				</div>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent40">
+					<h5 class='label'>minFilter:</h5>
+				</div>
+				<div class="percent60">
+					<select ng-model="filter[1]">
+						<option value="NearestFilter">NearestFilter</option>
+						<option value="NearestMipMapNearestFilter">NearestMipMapNearestFilter</option>
+						<option value="NearestMipMapLinearFilter">NearestMipMapLinearFilter</option>
+						<option value="LinearFilter">LinearFilter</option>
+						<option value="LinearMipMapNearestFilter">LinearMipMapNearestFilter</option>
+						<option value="LinearMipMapLinearFilter">LinearMipMapLinearFilter</option>
+					</select>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>

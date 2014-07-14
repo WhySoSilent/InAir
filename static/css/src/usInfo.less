@@ -1,0 +1,45 @@
+.usInfo {
+	position: relative;
+	width: 100%;
+	min-height: 450px;
+	padding: 50px 0;
+	box-sizing: border-box;
+	
+	.pic {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 50%;
+		line-height: 450px;
+		text-align: center;
+		
+		img {
+			max-height: 80%;
+
+		}
+	}
+	.picDescribe {
+		margin-left: 50%;
+		width: 50%;
+		font-size: 20px;
+		padding: 80px 0;
+		box-sizing: border-box;
+		line-height: 34px;
+
+	}
+	&:nth-child(odd) {
+
+		.picDescribe {
+			margin-left: 0;
+			margin-right: 50%;
+
+		}
+		.pic {
+			position: absolute;
+			top: 0;
+			left: 50%;
+
+		}
+	}
+}

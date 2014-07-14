@@ -1,0 +1,9 @@
+body{margin:0;padding:0;padding-top:100px;background:url(/img/bg.png);font-family:"Microsoft YaHei";}
+#content{width:960px;margin:0 auto;margin-bottom:500px;}#content #question{position:fixed;top:100px;width:220px;}#content #question h3{margin:0 0 30px 0;font-weight:normal;}
+#content #question ul{list-style-type:none;padding:0;}#content #question ul li{overflow-wrap:break-word;margin-bottom:10px;}#content #question ul li a{text-decoration:none;color:#a6a6a6;}#content #question ul li a:hover{text-decoration:underline;color:#808080;}
+#content #anwers{width:720px;margin-left:240px;}#content #anwers .detailAnwers{width:100%;margin-bottom:40px;box-sizing:border-box;border-radius:3px;}#content #anwers .detailAnwers .questionHead{width:100%;border-bottom:1px solid #e6e6e6;padding-top:90px;box-sizing:border-box;overflow:hidden;}#content #anwers .detailAnwers .questionHead .title{border:1px solid #d9d9d9;border-bottom:none;padding:10px 30px;background-color:#f5f6f7;border-radius:4px 4px 0 0;}
+#content #anwers .detailAnwers .questionHead h2{color:#808080;margin:0;}
+#content #anwers .detailAnwers .questionContent{border-top:none;padding:20px 30px;width:720px;box-sizing:border-box;background-color:#f5f6f7;border:1px solid #d9d9d9;border-radius:0 0 4px 4px;}#content #anwers .detailAnwers .questionContent h3{color:#333333;overflow:hidden;}
+#content #anwers .detailAnwers .questionContent p{color:#333333;overflow-wrap:break-word;line-height:1.5em;}
+#content #anwers .detailAnwers .questionContent img{display:block;margin:60px auto;max-width:659px;}
+#content #anwers .detailAnwers:first-child .questionHead{padding-top:0;}

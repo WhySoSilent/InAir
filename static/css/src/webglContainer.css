@@ -1,0 +1,12 @@
+div#WebGLContainer{position:relative;width:100%;padding-top:60%;box-sizing:border-box;background:#eee;background-size:auto 17%;background-repeat:repeat-x;background-position:bottom;}div#WebGLContainer canvas{position:absolute;top:0;left:0;width:100%;height:100%;}div#WebGLContainer canvas.displayLogo{background-image:url(/img/view/logo_text.png);background-size:auto 17%;background-repeat:no-repeat;background-position:bottom right;}
+div#WebGLContainer div#canvasOpts{position:absolute;bottom:50%;right:-50px;z-index:10;}div#WebGLContainer div#canvasOpts>a{display:block;box-sizing:border-box;height:36px;width:36px;text-align:center;margin-top:8px;color:#fff;background:#222;border-radius:18px;}div#WebGLContainer div#canvasOpts>a:hover{color:#444;background:#fff;border:1px solid #444;}
+div#WebGLContainer div#canvasOpts>a span{font-size:120%;line-height:36px;}
+div#WebGLContainer div#canvasCover{display:none;height:100%;width:100%;}
+div#WebGLContainer.fullScreen{position:fixed;top:0;left:0;width:100%;height:100%;padding:0;z-index:10;}div#WebGLContainer.fullScreen div#canvasCover.display{display:block;}
+div#WebGLContainer.fullScreen div#canvasOpts{right:30px;}
+div#WebGLContainer.editerOne div#canvasCover.display{display:block;}
+div#WebGLContainer.editerOne div#canvasOpts{right:30px;}
+div#startingLever{color:#fff;}div#startingLever div#headlineArea{margin-top:160px;}div#startingLever div#headlineArea h1{font-size:120px;font-weight:lighter;}
+div#startingLever div#headlineArea h3{color:#eee;max-height:200px;margin-bottom:60px;}
+div#startingLever div#loadingBar{width:100%;height:9px;border-bottom:2px solid #fff;}div#startingLever div#loadingBar div.loadedWidth{width:1%;height:100%;background:#fff;}
+div#startingLever div#startingPreviewArea{margin-top:160px;}div#startingLever div#startingPreviewArea img{width:100%;}

@@ -1,0 +1,56 @@
+<div>
+	<div ng-show="features.length">
+		<div class="aSectionRow">
+			<div class="percent100">
+				<input	type="text" ng-model='feature.title' />
+			</div>
+
+		</div>
+		<div class="aSectionRow">
+			<div class="percent100">
+				<textarea ng-model='feature.des'></textarea>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent25">
+				<h5 class="label">X: {{ feature.focus.position[0][0] | number }}</h5>
+			</div>
+			<div class="percent25">
+				<h5 class="label">Y: {{ feature.focus.position[0][1] | number }}</h5>
+			</div>
+			<div class="percent25">
+				<h5 class="label">Z: {{ feature.focus.position[0][2] | number }}</h5>
+			</div>
+			<div class="percent25">
+				<button ng-click="getCameraPosition(0)"><span class="glyphicon glyphicon-camera"></span></button>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent25">
+				<h5 class="label">X: {{ feature.focus.position[1][0] | number }}</h5>
+			</div>
+			<div class="percent25">
+				<h5 class="label">Y: {{ feature.focus.position[1][1] | number }}</h5>
+			</div>
+			<div class="percent25">
+				<h5 class="label">Z: {{ feature.focus.position[1][2] | number }}</h5>
+			</div>
+			<div class="percent25">
+				<button ng-click="getCameraPosition(1)"><span class="glyphicon glyphicon-camera"></span></button>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent60">
+				<h5 class="label">动画持续时间(ms)</h5>
+			</div>
+			<div class="percent40">
+				<input	type="text" ng-model='feature.focus.periodTime' format />
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent100">
+				<button class="importantOne" ng-click="deleteFeature(feature)">删除此特性</button>
+			</div>
+		</div>
+	</div>
+<div>

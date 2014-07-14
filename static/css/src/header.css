@@ -1,0 +1,6 @@
+header{position:fixed;z-index:100;height:60px;width:100%;box-sizing:border-box;background-color:rgba(0, 0, 0, 0.95);overflow:hidden;transition:height .2s;-webkit-transition:height .2s;}header #logo{height:100%;width:100%;color:#fff;padding:0;overflow:hidden;}header #logo img{display:none;height:100%;}
+header #logo h2,header #logo p{position:relative;top:5px;margin:0;display:inline-block;line-height:60px;}header #logo h2>a,header #logo p>a{color:#fff;text-decoration:none;}header #logo h2>a:hover,header #logo p>a:hover{color:#eee;}
+header #logo p{margin-left:16px;}
+header.cubeStyle{height:179px;background-color:rgba(255, 255, 255, 0);}header.cubeStyle .container{height:100%;}header.cubeStyle .container #logo{position:relative;height:100%;width:179px;background-color:#000;color:#fff;padding:20px 30px;box-sizing:border-box;}header.cubeStyle .container #logo img{width:100%;height:61.7px;display:block;}
+header.cubeStyle .container #logo h2{position:absolute;top:92px;margin:0;}
+header.cubeStyle .container #logo p{position:absolute;top:125px;margin:0;}

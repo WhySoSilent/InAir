@@ -1,0 +1,94 @@
+//切换按钮
+#shader {
+	font-size: 24px;
+	color: #9C9C9C;
+	margin-top: 15px;
+
+	&:hover {
+		color: #eee;
+	}
+}
+
+div#shaderPanel {
+	box--sizing: border-box;
+	position: fixed;
+	right: -310px;
+	width: 310px;
+	height: 100%;
+	z-index: 100;
+	overflow-y: auto;
+
+	background: #fff;
+	transition: right .3s;
+
+	//
+	padding: 60px 10px 10px 10px;
+
+	&.show {
+		right: 0;
+	}
+
+	div.aEdit {
+		display: none;
+		margin-top: 20px;
+
+		&.show {
+			display: block;
+		}
+	}
+}
+
+@liHeight: 50px;
+@propertyNameWidth: 80px;
+@propertyValueWidth: 143px;
+div.materialProperty, div.sceneProperty, div.lightProperty {
+	ul.properties {
+		//background: #efefef;
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+
+		li {
+			box-sizing: border-box;
+			height: @liHeight;
+			//padding: 8px 0px;
+
+			//border: 1px solid #bbb;
+
+			&:nth-child(odd) {
+				background: #F7F7F7;
+			}
+		}
+		
+	}
+	// 属性名称
+	.propertyName {
+		display: inline-block;
+		width: @propertyNameWidth;
+		line-height: @liHeight;
+	}
+	.propertyEnable {
+		display: inline-block;
+		width: @liHeight;
+		//background: #DDDDDD;
+		text-align: center;
+	}
+	.propertyValue {
+		display: inline-block;
+		float: right;
+		///width: @propertyValueWidth;
+
+		text-align: right;
+
+		img {
+			display: inline-block;
+			height: @liHeight;
+			width: @liHeight;
+		}
+		input[type=color] {
+			height: 40px;
+			width: 40px;
+			padding: 0;
+		}
+	}
+}

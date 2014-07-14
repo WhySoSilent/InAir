@@ -1,0 +1,18 @@
+<div class="imgControl" ng-class="{ display: showMe }">
+	<!-- 这个地方的id的写入 -->
+	<img ng-src="/data/models/{{ modelId }}/env/{{ choosed }}_px.jpg" ng-click="toggle()">
+	<div class="popPanel">
+		<div class="jiantou"></div>
+		<div class="aSectionRow">
+			<div w-env-texture-upload create-newone="createNewone" return-to="choosed" model-id="{{modelId}}"></div>
+		</div>
+		<div ng-hide="createNewone">
+			<div class="aSectionRow">
+				<div class="percent100">
+					<select ng-model='choosed' ng-options="e.id as e.name for e in envTextures">
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

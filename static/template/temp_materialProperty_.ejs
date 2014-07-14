@@ -1,0 +1,104 @@
+<!-- Template id: temp_materialProperty -->
+<div class="materialProperty">
+	<h3 class="name"><%= name %></h3>
+	<hr />
+	<ul class='properties'>
+		<li>
+			<div class='propertyName'>SHADE</div>
+
+			<div class='propertyValue'>
+				<select  class="Mshading form-control" >
+                    <option value="Basic" <%= mType === 'Basic' ? 'selected' : '' %>>Basic</option>
+                    <option value="Phong" <%= mType === 'Phong' ? 'selected' : '' %>>Phong</option>
+                    <option value="Lambert" <%= mType === 'Lambert' ? 'selected' : '' %>>Lambert</option>
+                    <option value="Shader" <%= mType === 'Shader' ? 'selected' : '' %>>Shader</option>
+                </select>
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>颜色</div>
+
+			<div class='propertyValue'>
+				<input class='Mcolor' value="<%= color %>" type='color' />
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>透明</div>
+			<div class='propertyEnable'><input <%= transparent ? 'checked' : '' %> class="MenableOpacity " type='checkbox'/></div>
+			<div class='propertyValue'>
+				<input value="<%= opacity %>" class='Mopacity' type='range' max="1" min="0" step="0.05"/>
+			</div>
+		</li>
+		<% if( mType !== 'Basic' ) { %>
+		<li>
+			<div class='propertyName'>环境光</div>
+
+			<div class='propertyValue'>
+				<input value="<%= ambient %>" class='Mambient' type='color' />
+			</div>
+		</li>
+		<% } %>
+		<li>
+			<div class='propertyName'>可视</div>
+			
+			<div class='propertyEnable'>
+				<input class="MenableVisible " <%= visible ? 'checked' : '' %> type='checkbox'/>
+			</div>
+		</li>
+		<% if( map ) { %>
+		<li>
+			<div class='propertyName'>纹理</div>
+			<div class='propertyEnable'><input checked class="MenableMap" type='checkbox' /></div>
+			<div class='propertyValue'>
+				<img src="/data/models/<%= Plane.modelId %>/<%= map.sourceFile %>">
+			</div>
+		</li>
+		<% }  if( bumpMap ) { %>
+		<li>
+			<div class='propertyName'>凹凸贴图</div>
+			<div class='propertyEnable'><input checked class="MenableBump" type='checkbox' /></div>
+			<div class='propertyValue'>
+				<img src="/data/models/<%= Plane.modelId %>/<%= bumpMap.sourceFile %>">
+			</div>
+		</li>
+		<% }  if( normalMap ) { %>
+		<li>
+			<div class='propertyName'>法线贴图</div>
+			<div class='propertyEnable'><input checked class="MenableNormal" type='checkbox' /></div>
+			<div class='propertyValue'>
+				<img src="/data/models/<%= Plane.modelId %>/<%= normalMap.sourceFile %>">
+			</div>
+		</li>
+		<% }  if( specularMap ) { %>
+		<li>
+			<div class='propertyName'>高光贴图</div>
+			<div class='propertyEnable'><input checked class="MenableSpecular" type='checkbox' /></div>
+			<div class='propertyValue'>
+				<img src="/data/models/<%= Plane.modelId %>/<%= specularMap.sourceFile %>">
+			</div>
+		</li>
+		<% }  /*if( envMap ) */{ %>
+		<li>
+			<div class='propertyName'>环境贴图</div>
+			<div class='propertyEnable'><input <%= enableEnv ? 'checked' : '' %>  class="MenableEnv" type='checkbox' /></div>
+			<div class='propertyValue'>
+				<img src="">
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>反射率</div>
+
+			<div class='propertyValue'>
+				<input value="<%= reflectivity %>" class='Mreflectivity' type='range' max="1" min="0" step="0.05"/>
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>反光度</div>
+
+			<div class='propertyValue'>
+				<input value="<%= shininess %>" class='Mshininess' type='range' max="100" min="1" step="1"/>
+			</div>
+		</li>
+		<% } %>
+	</ul>
+</div>

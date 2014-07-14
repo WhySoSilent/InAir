@@ -1,0 +1,38 @@
+<div class="imgControl" ng-class="{ display: showMe }">
+	<img ng-src="{{ handdle }}" ng-click="toggle()">
+
+	<div class="popPanel">
+		<div class="jiantou"></div>
+
+		<div ng-hide="createNewone" class="aSectionRow">
+			<div class="percent100">
+				<button ng-click="toSelect()">上传文件</button>
+			</div>
+		</div>
+		<div ng-show="createNewone">
+			<div  class="labelRow">
+				<div class="percent90">
+					<h5>上传新贴图</h5>
+				</div>
+				<div class="percent10">
+					<a ng-click="exitCreate()" class="close">X</a>
+				</div>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent100">
+					<input type="file"/>
+				</div>
+			</div>
+			<div ng-hide="uploading" class="aSectionRow">
+				<div class="percent100">
+					<button ng-click="updateNewone()">上传文件</button>
+				</div>
+			</div>
+			<div ng-show="uploading" class="aSectionRow">
+				<div class="percent100">
+					<button>正在上传...</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

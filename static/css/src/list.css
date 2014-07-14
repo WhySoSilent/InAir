@@ -1,0 +1,4 @@
+body{margin:0;padding:0;}body #content{width:100%;box-sizing:border-box;background-color:#eee;}body #content .contentHead{position:relative;width:100%;padding:100px 0;box-sizing:border-box;}body #content .contentHead .headLeft{width:70%;}body #content .contentHead .headLeft p{color:#444;font-size:20px;}
+body #content .modelsList{width:100%;}body #content .modelsList a{text-decoration:none;}
+body #content .butt{width:100%;padding:100px 0;}body #content .butt button{margin:0 auto;display:block;}
+button{width:275px;height:65px;border:none;color:#444;font-size:35px;font-weight:lighter;font-family:"Corbel";border:2px solid #3a3a3a;border-radius:3px;}button:hover{background-color:#444;color:#eee;}

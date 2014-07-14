@@ -1,0 +1,16 @@
+/*
+ * loaderDialog
+ *
+ *
+ */
+
+ 构想是载入过程中展示作者信息和加载进度
+
+ #preloaderBar 是加载区域
+
+ #preloaderBar .preloader 是加载条本身
+ #loadedWidth 是已加载状态，用js调整width属性调节
+
+
+#startPlaying 是场景加载的触发区域
+button#startModelViewerRun 按钮是用来触发模型浏览器运行的，首次运行负责加载文件

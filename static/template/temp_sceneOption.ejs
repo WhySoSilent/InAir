@@ -1,0 +1,28 @@
+<!-- Template id: temp_sceneOption -->
+<div id="canvasOpts">
+<!--
+  <a id="audioPlay" data-toggle="tooltip" data-placement="left" data-original-title="audio">
+    <span class="glyphicon glyphicon-volume-up"></span>
+  </a> 
+-->
+  <a id="saveSnapshot" data-toggle="tooltip" data-placement="left" data-original-title="snapshot" download='snapShot.png'>
+    <span class="glyphicon glyphicon-camera"></span>
+  </a>
+  <% if ( type === 'admin' ) { %>
+  <a data-toggle="tooltip" data-placement="left" data-original-title="FPS:">
+    <span id="renderStatus">FPS:</span>
+  </a>
+  <% } %>
+  <a id="featurePlay" data-toggle="tooltip" data-placement="left" data-original-title="features">
+    <span class="glyphicon glyphicon-film"></span>
+  </a>
+  <% if ( type === 'scene' ) { %>
+  <a id="toggleFullscreen" data-toggle="tooltip" data-placement="left" data-original-title="fullscreen">
+    <span class="glyphicon glyphicon-fullscreen"></span>
+  </a>
+  <% } if ( type === 'iframe' ) { %>
+  <a id="toViewDetail" data-toggle="tooltip" data-placement="left" data-original-title="view" target="_black" href="/scenes/<%= id %>">
+    <span class="glyphicon glyphicon-send"></span>
+  </a>
+  <% } %>
+</div>

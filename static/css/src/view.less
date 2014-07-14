@@ -1,0 +1,93 @@
+body {
+	padding-top: 100px;
+	background: #eee;
+	//background: url(/img/bg.png);
+	font-family: "Microsoft YaHei";
+
+	&>div#main {
+		min-height: 1000px;
+		padding-bottom: 300px;
+
+		h3#outerName {
+			margin: 10px 0 20px 0;
+		}
+	}
+}
+
+div#notSupport {
+	display: none;
+}
+html.no-webgl div#notSupport{
+	display: block;
+}
+div#previewerApplyTips {
+	display: none;
+}
+
+div#me {
+	position: relative;
+	height: 88px;
+	background: #2a2a2a;
+	padding: 20px;
+	color: #fff;
+	border-radius: 3px;
+	box-shadow: 3px 3px 0px #E9E9E9;
+
+	img.logo {
+		position: absolute;
+		top: 15px;
+		left: 10px;
+		height: 50px;
+		
+	}
+	.name {
+		position: absolute;
+		width: 55%;
+		right: 10px;
+		font-size: 16px;
+		line-height: 23px;
+		margin: 0;
+	}
+}
+
+div#modelInfo {
+	margin-top: 40px;
+
+	h4.title {
+		color: #aaaaaa;
+	}
+	p#outerDes {
+		font-size: 15px;
+		line-height: 25px;
+		color: rgb( 35, 35, 35 );
+	}
+
+}
+
+div#shareLinks {
+	margin-top: 90px;
+
+	h4.title {
+		color: #aaaaaa;
+		position: relative;
+
+		a.helpLink {
+			position: absolute;
+			right: 4px;
+			bottom: 0;
+			font-size: 80%;
+		}
+	}
+
+	label.label {
+		//
+	}
+
+	div.input-group {
+		margin-top: 10px;
+	}
+
+	input {
+		cursor: default;
+	}
+}

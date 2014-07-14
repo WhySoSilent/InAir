@@ -1,0 +1,73 @@
+div.aMCard {
+	position: relative;
+	height: 300px;
+	box-sizing: border-box;
+	background: #fff;
+	border: 1px solid #f3f3f3;
+	box-shadow: 3px 4px 0px rgba(175, 175, 175, 0.28);
+	margin-bottom: 30px;
+
+	a.preview {
+		position: absolute;
+		display: block;
+		overflow: hidden;
+		width: 450px;
+		height: 100%;
+		background: url(/img/list/defaultPreview.jpg);
+
+		img {
+			width: 100%;
+			overflow: hidden;
+		}
+	}
+	div.metas {
+		position: absolute;
+		left: 450px;
+		padding: 25px;
+		height: 100%;
+
+
+
+		.tit {	//标题
+			margin: 0 0 10px 0;
+		}
+		.desTit {	//描述
+			max-height: 100px;
+			overflow: hidden;
+			margin: 0;
+			font-size: 16px;
+			line-height: 25px;
+		}
+
+		div.builder {
+			position: absolute;
+			bottom: 25px;
+			height: 50px;
+			width: 272px;
+
+
+			img.avatar {
+				float: left;
+				height: 50px;
+				width: 50px;
+				margin-right: 10px;
+				border-radius: 25px;
+
+			}
+			.name {
+				float: left;
+				line-height: 50px;
+			}
+			a.toView {
+				display: block;
+				float: right;
+				line-height: 70px;
+			}
+		}
+	}
+	
+
+	&:hover {
+		background: #f8f8f8;
+	}
+}

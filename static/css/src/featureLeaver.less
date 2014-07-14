@@ -1,0 +1,47 @@
+/*
+ * a.pre
+ * div.features
+ * a.next
+ * -----------------
+ * div#featureLeaver .display
+ */
+
+div#featureLeaver {
+	display: none;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	background: rgba(238, 238, 238, 0.8);
+	z-index: 9;
+
+	a.pre, a.next{
+		display: inline-block;
+		float: left;
+		box-sizing: border-box;
+		text-align: center;
+
+		height: 100%;
+		width: 10%;
+
+		&:hover {
+			background: rgba(0, 0, 0, .3);
+		}
+
+		span {
+			color: #444;
+			line-height: 100px;
+		}
+	}
+
+	div.features {
+		box-sizing: border-box;
+		float: left;
+		width: 79.99%;
+		text-align: center;
+	}
+
+	&.display {
+		display: block;
+	}
+}

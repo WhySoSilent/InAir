@@ -1,0 +1,3 @@
+div#metadata{position:absolute;left:50px;top:100px;z-index:1000;}
+div#metadata .des{width:200px;}
+div#metadata ul{list-style-type:none;padding:8px;}

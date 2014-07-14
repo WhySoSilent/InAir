@@ -1,0 +1,11 @@
+body{padding-top:100px;background:#eee;font-family:"Microsoft YaHei";}body>div#main{min-height:1000px;padding-bottom:300px;}body>div#main h3#outerName{margin:10px 0 20px 0;}
+div#notSupport{display:none;}
+html.no-webgl div#notSupport{display:block;}
+div#previewerApplyTips{display:none;}
+div#me{position:relative;height:88px;background:#2a2a2a;padding:20px;color:#fff;border-radius:3px;box-shadow:3px 3px 0px #E9E9E9;}div#me img.logo{position:absolute;top:15px;left:10px;height:50px;}
+div#me .name{position:absolute;width:55%;right:10px;font-size:16px;line-height:23px;margin:0;}
+div#modelInfo{margin-top:40px;}div#modelInfo h4.title{color:#aaaaaa;}
+div#modelInfo p#outerDes{font-size:15px;line-height:25px;color:#232323;}
+div#shareLinks{margin-top:90px;}div#shareLinks h4.title{color:#aaaaaa;position:relative;}div#shareLinks h4.title a.helpLink{position:absolute;right:4px;bottom:0;font-size:80%;}
+div#shareLinks div.input-group{margin-top:10px;}
+div#shareLinks input{cursor:default;}

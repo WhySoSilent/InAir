@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>shaderPanel</title>
+<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="./styles/shaderPanel.css">
+<style type="text/css">
+	body {
+		background: url(./test/plane.jpg);
+	}
+	input[type=range] {
+		width: 100%;
+	}
+</style>
+</head>
+<body>
+<div id="shaderPanel" class="show">
+	<h3>配 置</h3>
+	<form>
+	  <div class="form-group">
+	    <label for="modelName">场景名称</label>
+	    <input type="text" class="form-control" id="modelName" placeholder="">
+	  </div>
+	  <div class="form-group">
+	    <label for="modelDescribe">描述</label>
+	    <textarea class="form-control" rows="3" id="modelDescribe" placeholder="Describe model here ..."></textarea>
+	  </div>
+	  <div class="form-group">
+		  <div class="btn-group">
+			<button type="button" class="btn btn-default">全局</button>
+			<button type="button" class="btn btn-default">光源</button>
+			<button type="button" class="btn btn-default">照明</button>
+		  </div>
+	  </div>
+	  <div class="form-group">
+	  	<input type="range" name="cssercom" />
+	  </div>
+	  <button type="submit" class="btn btn-default btn-block btn-lg">保存</button>
+	</form>
+	<div id="listOfMaterials"><!-- 材质列表的插入锚点 -->
+		<!-- 材质调节 -->
+		<div class="materialProperty">
+			<h3>材质名称</h3>
+			<hr />
+			<ul class='properties'>
+
+				<li>
+					<div class='propertyName'>颜色</div>
+					<div class='propertyEnable'><input type='checkbox' class="enableOne"/></div>
+					<div class='propertyValue'>
+						<input type='color' />
+					</div>
+				</li>
+				<li>
+					<div class='propertyName'>透明</div>
+					<div class='propertyEnable'><input type='checkbox' class="enableOne"/></div>
+					<div class='propertyValue'>
+						<input type='range' />
+					</div>
+				</li>
+				<li>
+					<div class='propertyName'>可视</div>
+					
+					<div class='propertyEnable'>
+						<input type='checkbox'/>
+					</div>
+				</li>
+				<li>
+					<div class='propertyName'>纹理</div>
+					<div class='propertyEnable'><input type='checkbox' class="enableOne"/></div>
+					<div class='propertyValue'>
+						<img src="">
+					</div>
+				</li>
+				<li>
+					<div class='propertyName'>凹凸贴图</div>
+					<div class='propertyEnable'><input type='checkbox' class="enableOne"/></div>
+					<div class='propertyValue'>
+						<img src="">
+					</div>
+				</li>
+				<li>
+					<div class='propertyName'>法线贴图</div>
+					<div class='propertyEnable'><input type='checkbox' class="enableOne"/></div>
+					<div class='propertyValue'>
+						<img src="">
+					</div>
+				</li>
+				<li>
+					<div class='propertyName'>高光贴图</div>
+					<div class='propertyEnable'><input type='checkbox' class="enableOne"/></div>
+					<div class='propertyValue'>
+						<img src="">
+					</div>
+				</li>
+				<li>
+					<div class='propertyName'>环境贴图</div>
+					<div class='propertyEnable'><input type='checkbox' class="enableOne"/></div>
+					<div class='propertyValue'>
+						<img src="">
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

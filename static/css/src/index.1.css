@@ -1,0 +1,9 @@
+div.aLevel{min-height:300px;}div.aLevel#banner{text-align:center;background:#01c2cb;}
+div.aLevel#banner .row{height:600px;padding-top:50px;}
+div.aLevel#banner #mainTitleContainner{color:#fff;padding:50px 20px 0 0;text-align:left;}
+div.aLevel#banner #iframeContainner{padding:50px 0 0 50px;}
+div.aLevel#banner a#down{display:block;height:50px;margin:20px 0 0 0;padding:0 0 5px 0;background:url(../../img/index/next.png) no-repeat center;}div.aLevel#banner a#down:hover{background:rgba(0, 0, 0, 0.05) url(../../img/index/next.png) no-repeat center;}
+div.aLevel#intro{background:#f8f8f8;border-top:1px solid #f0f0f0;}div.aLevel#intro .row{padding:50px 0;}
+div.aLevel#intro .intro-title-text{color:#aaa;text-align:center;}
+div.aLevel#intro .col-sm-4{text-align:center;padding-top:35px;}
+div.aLevel#footer{color:#ccc;background:#292929;padding:80px 0 0 0;}div.aLevel#footer .about{text-align:center;color:#eee;margin:50px 0 30px 0;}div.aLevel#footer .about p{color:#777;}

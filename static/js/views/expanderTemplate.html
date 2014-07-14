@@ -1,0 +1,8 @@
+<div>
+	<div class="title" ng-click='toggle()'>
+		<span ng-if="!showMe" class="">></span>
+		<span ng-if="showMe" class="">-</span>
+		<span class='text'></span>
+	</div>
+	<div class="body" ng-if="showMe" ng-transclude></div>
+</div>

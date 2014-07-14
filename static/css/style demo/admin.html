@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>管理页面</title>
+<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="./styles/admin.css">
+<style type="text/css">
+	iframe {
+		position: fixed;
+		width: 100%;
+		height: 110%;
+		margin-top: -60px;
+		z-index: 0;
+	}
+
+</style>
+<script src="../lib/common/jquery-1.10.2.min.js"></script>
+<script src="../lib/common/angular.min.js"></script>
+</head>
+<body>
+<iframe src="http://inear.se/beanstalk/"></iframe>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-7" id="">
+			<h1>肥猫管理系统 <small> 模型管理CMS</small></h1>
+			<hr />
+			<form>
+			  <div class="form-group">
+			    <label for="ModelName">名称</label>
+			    <input type="text" class="form-control" id="ModelName" placeholder="场景名称">
+			  </div>
+			  <div class="form-group">
+			  	<label for="ModelDes">描述此模型</label>
+			    <textarea id="ModelDes" class="form-control" rows="6" placeholder="20个字最适宜长度"></textarea>
+			  </div>
+			  <button id="send" class="btn btn-default">&nbsp;&nbsp;注册&nbsp;&nbsp;</button>
+			  <button id="update" class="btn btn-default">&nbsp;&nbsp;更新&nbsp;&nbsp;</button>
+			</form>
+		</div>
+		<div class="col-sm-3 col-md-offset-2" ng-app="published">
+			<div ng-controller="list" id="published">
+				<h2>发布的场景<small> 共 {{models.length || 0}} 个</small></h2>
+				<div ng-repeat="m in models" class="publishedModel">
+					<h3>{{m.name}}</h3>
+					<p class="text-danger">id: {{m.id}}</p>
+					<a ng-click="delete()" class="delete">X</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+<script type="text/javascript">
+var publishedModel = angular.module('published', []);
+
+publishedModel.controller('list', ['$scope', function($scope) {
+	$scope.models = [
+		{ name: '汽车', id: 'QW23ER45TY6'},
+		{ name: '黑莓手机', id: 'PO98IU7YT6'},
+		{ name: '户型', id: 'K87JHG54FG'}
+	];
+
+	$scope.delete = function() {
+		if(confirm("确定删除这个模型？")) {
+			//删除这个
+		}
+	}
+}]);
+
+	// $(function() {
+	// 	$("#delete").click(function() {
+	// 		$.ajax({
+	// 			url : '/models/'+$("#modelID").val()+'/delete',
+	// 			type : 'post',
+	// 			statusCode : {
+	// 				200: function( res, stausText, xhr ) { 
+	// 					//删除成功
+	// 				},
+	// 				404: function () {
+	// 					// NOT_FOUND 404	要更新的id不存在
+	// 				}
+	// 			},
+	// 			error: function (xhr, statusText, err) {
+
+ //                }
+	// 		});
+	// 	});
+	// })
+
+	$(function() {
+		$("#update").click(function() {
+			$.ajax({
+				url : '/models/'+$("#modelID").val()+'/update',
+				type : 'post',
+				data : JSON.stringify({
+					id : $("#modelID").val(),
+					name : $("#name").val(),
+					des : $("#des").val()
+				}),
+				contentType : 'application/json',
+				processData : false,
+				statusCode : {
+					200: function( res, stausText, xhr ) { 
+						//更新成功
+					},
+					400: function ( xhr, statusText, err ) {
+						// BAD_REQUEST 400	发送到服务器的对象为空
+					},
+					404: function () {
+						// NOT_FOUND 404	要更新的id不存在
+					}
+					
+				},
+				error: function (xhr, statusText, err) {
+
+                }
+			});
+		});
+	})
+
+	$(function() {
+		$("#send").click(function() {
+			$.ajax({
+				url : '/model/create',
+				type : 'POST',
+				data : JSON.stringify({
+					name : $("#ModelName").val(),
+					des : $("#ModelDes").val()
+				}),
+				contentType : 'application/json',
+				//dataType : 'json',	//不要随便添加这句
+				processData : false,
+				statusCode : {
+					201: function ( res, stausText, xhr ) {
+						// CREATED 201
+						/* res 返回的body内容
+						 * stausText 成功的时候应该是success
+						 * xhr 对象
+						 */
+						 alert(xhr.getResponseHeader("Location"));
+					},
+					400: function () {
+						// BAD_REQUEST 400	发送到服务器的对象为空
+					}
+				},
+				error: function (xhr, statusText, err) {
+                    //StatusCode=2xx或304时执行success, 其余则将触发error
+                    
+                }
+
+			});
+		});
+	})	
+</script>
+</html>

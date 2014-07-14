@@ -1,0 +1,83 @@
+<div>
+	<div ng-hide="createNewone" class="aSectionRow">
+		<div class="percent100">
+			<button ng-click="toSelect()">上传新贴图</button>
+		</div>
+	</div>
+	<div ng-show="createNewone">
+		<div  class="labelRow">
+			<div class="percent90">
+				<h5>上传新贴图</h5>
+			</div>
+			<div class="percent10">
+				<a ng-click="exitCreate()" class="close">X</a>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<h5 class="label">名称: </h5>
+			</div>
+			<div class="percent80">
+				<input type="text" ng-model="name" />
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<h5 class="label">+X轴</h5>
+			</div>
+			<div class="percent80">
+				<input type="file" class="filePx"/>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<h5 class="label">+Y轴</h5>
+			</div>
+			<div class="percent80">
+				<input type="file" class="filePy"/>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<h5 class="label">+Z轴</h5>
+			</div>
+			<div class="percent80">
+				<input type="file" class="filePz"/>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<h5 class="label">-X轴</h5>
+			</div>
+			<div class="percent80">
+				<input type="file" class="fileNx"/>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<h5 class="label">-Y轴</h5>
+			</div>
+			<div class="percent80">
+				<input type="file" class="fileNy"/>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<h5 class="label">-Z轴</h5>
+			</div>
+			<div class="percent80">
+				<input type="file" class="fileNz"/>
+			</div>
+		</div>
+		<div ng-hide="uploading" class="aSectionRow">
+			<div class="percent100">
+				<button ng-click="updateNewone()">上传文件</button>
+			</div>
+		</div>
+		<div ng-show="uploading" class="aSectionRow">
+			<div class="percent100">
+				<button>正在上传...</button>
+			</div>
+		</div>
+	</div>
+</div>

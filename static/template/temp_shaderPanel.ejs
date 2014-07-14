@@ -1,0 +1,31 @@
+<!-- Template id: temp_shaderPanel -->
+<div id="shaderPanel" class="">
+		<!-- 标签页 -->
+		<ul id="editNav" class="nav nav-tabs">
+		  <li class="active" data-targetDiv="common"><a>Common</a></li>
+		  <li data-targetDiv="scene"><a>Scene</a></li>
+		  <li data-targetDiv="listOfMaterials"><a>Material</a></li>
+		</ul>
+		<!-- Common面板 -->
+		<div id="common" class="aEdit show">
+			<form>
+			  <div class="form-group">
+			    <label for="modelName">场景名称</label>
+			    <input type="text" class="form-control" id="modelName" placeholder="">
+			  </div>
+			  <div class="form-group">
+			    <label for="modelDescribe">描述</label>
+			    <textarea class="form-control" rows="3" id="modelDescribe" placeholder="Describe model here ..."></textarea>
+			  </div>
+			</form>
+		</div>
+		<!-- 场景光源/控制面板 -->
+		<div id="scene" class="aEdit">
+			<div id="listOfLights"></div>
+			<div id="anchorOfScene"></div>
+		</div>
+		<!-- 材质面板 -->
+		<div id="listOfMaterials" class="aEdit">
+			
+		</div>
+	</div>

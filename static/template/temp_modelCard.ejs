@@ -1,0 +1,21 @@
+<!-- Template id: temp_modelCard -->
+<!--
+
+-->
+<%  _.each(listArr, function(aModel) { %>
+<div class="col-sm-11">
+	<div class="aMCard">
+		<a class="preview" href="/scenes/<%= aModel.id %>" target="_blank"><img src="/data/models/<%= aModel.id %>/previews/preview.png"></a>
+		<div class="metas">
+			<h3 class="tit"><%= aModel.name %></h3>
+			<p class="desTit"><%= aModel.des %></p>
+
+			<div class="builder">
+				<img class="avatar" src="/img/avatar.png">
+				<h4 class="name">FANTASTIC CAT</h4>
+				<a class="toView" href="/scenes/<%= aModel.id %>" target="_blank">view 3D ></a>
+			</div>
+		</div>
+	</div>
+</div>
+<% }); %>

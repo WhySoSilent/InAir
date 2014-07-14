@@ -1,0 +1,4 @@
+body{padding-top:100px;background:#eee;background:url(/img/bg.png);font-family:"Microsoft YaHei";}body>div#main{min-height:1000px;}body>div#main>h3{margin:10px 0 20px 0;}
+div#me{position:relative;height:88px;background:#2a2a2a;padding:20px;color:#fff;border-radius:3px;box-shadow:3px 3px 0px #E9E9E9;}div#me img.logo{position:absolute;top:5px;left:0;height:70px;}
+div#me .name{position:absolute;width:55%;right:10px;font-size:16px;line-height:23px;margin:0;}
+p#business{margin-top:40px;font-size:15px;line-height:25px;color:#232323;}

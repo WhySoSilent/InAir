@@ -1,0 +1,71 @@
+<div id="common" ng-controller='commonController'>
+	<!-- Model -->
+	<expander class='expander' expander-title='Model'>
+		<div class="labelRow">
+			<h5>模型名称</h5>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent100">
+				<input type="text" ng-model="model.name" required/>
+			</div>
+		</div>
+		<div class="labelRow">
+			<h5>描述信息</h5>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent100">
+				<textarea type="text" ng-model='model.des' required></textarea>
+			</div>
+		</div>
+	</expander>
+	<!-- Feature -->
+	<div class="aSectionRow">
+		<div class="percent20">
+			<h5 class="label">选择</h5>
+		</div>
+		<div class="percent80">
+			<select ng-model="feature" ng-options="f.title for f in features"></select>
+		</div>
+	</div>
+	<expander class='expander' expander-title='Features'>
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='common.enableFeature'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !common.enableFeature}'>
+			<div class="aSectionRow">
+				<div class="percent100">
+					<button ng-click="cerateNewFeature()">添加新产品特性</button>
+				</div>
+			</div>
+			
+			<div w-feature-control></div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+	<!-- Preview -->
+	<expander class='expander' expander-title='Preview'>
+		<div class="labelRow">
+			<h5>预览图 ( png 435X299 )</h5>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<div w-resource-control r-position="preview" r-format="png" r-name="preview" r-handdle="previews.preview" model-id="{{modelId}}"></div>
+			</div>
+			<div class="percent80">
+				<h5 class="label">{{ previews.preview }}</h5>
+			</div>
+		</div>
+		<div class="labelRow">
+			<h5>加载预览图 ( png 500X800 )</h5>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<div w-resource-control r-position="preview" r-format="png" r-name="preview_starting" r-handdle="previews.startingPreview" model-id="{{modelId}}"></div>
+			</div>
+			<div class="percent80">
+				<h5 class="label">{{ previews.startingPreview }}</h5>
+			</div>
+		</div> 
+	</expander>
+</div>

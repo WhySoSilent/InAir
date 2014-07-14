@@ -1,0 +1,7 @@
+
+div#editer.common div#editerPageTag>div:nth-child(1){background:#2b2b2b;}
+div#editer.scene div#editerPageTag>div:nth-child(2){background:#2b2b2b;}
+div#editer.material div#editerPageTag>div:nth-child(3){background:#2b2b2b;}
+div#editerPageTag{height:40px;}div#editerPageTag>div{box-sizing:border-box;width:33.333%;height:100%;display:inline-block;float:left;color:#AFAFAF;line-height:40px;text-align:center;}div#editerPageTag>div>a{height:100%;width:100%;display:block;color:#C4C4C4;}
+div#editerPageTag>div:hover{background:#2b2b2b;}
+div#editerPageTag>div.active{background:#2b2b2b;}

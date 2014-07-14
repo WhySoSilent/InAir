@@ -1,0 +1,46 @@
+/*
+ * #header 
+ * normal | hiddenStyle
+ */
+div#header {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 60px;
+	color: #fff;
+	background: rgba(10, 10, 10, .95);
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	transition: all .3s;
+
+	z-index: 20;
+
+	div.logo {
+		img {
+			height: 26px;
+		}
+		span {
+			font-size: 20px;
+			line-height: 60px;
+
+			small {
+				font-size: 60%;
+			}
+		}
+	}
+
+	&.hiddenStyle {
+		border-bottom: 1px solid rgba(255, 255, 255, 0.23);
+		background-color: transparent;	
+		box-shadow: none;
+
+		color: #fff;
+	}
+
+	&:hover {
+		color: #eee;
+		//color: #707070;
+		background: rgba(10, 10, 10, .95);
+		box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+		border-bottom: 0px;
+	}
+}

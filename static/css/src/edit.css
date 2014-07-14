@@ -1,0 +1,4 @@
+html{width:100%;height:100%;}
+body#edit{width:100%;height:100%;margin:0;padding:0;display:-webkit-box;-webkit-box-orient:horizontal;background:#575757;}body#edit div#editer{height:100%;width:300px;overflow-x:hidden;overflow-y:auto;z-index:100;background:;background:#F0F0F0;}
+body#edit div#WebGLContainer{height:100%;-webkit-box-flex:1;padding-top:0;}body#edit div#WebGLContainer div#featureLeaver{box-sizing:border-box;overflow:hidden;}
+div#header{background:rgba(83, 83, 83, 0.57);}

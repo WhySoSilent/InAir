@@ -1,0 +1,59 @@
+<!-- Template id: temp_sceneProperty -->
+<div class="sceneProperty">
+	<h3>控制器</h3>
+	<ul class='properties'>
+		<li>
+			<div class='propertyName'>Type</div>
+
+			<div class='propertyValue'>
+				<select  class="Ctype form-control" >
+                    <option value="TrackballControls" <%= type === 'TrackballControls' ? 'selected' : '' %> >轨迹球</option>
+                    <option value="OrbitControls" <%= type === 'OrbitControls' ? 'selected' : '' %> > >Orbit</option>
+                    <!-- 第一人称控制 -->
+                </select>
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>缩放</div>
+
+			<div class='propertyEnable'>
+				<input class="Czoom " <%= zoom ? 'checked' : '' %> type='checkbox'/>
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>平移</div>
+
+			<div class='propertyEnable'>
+				<input class="Cpan " <%= pan ? 'checked' : '' %> type='checkbox'/>
+			</div>
+		</li>
+
+
+		
+		<li>
+			<div class='propertyName'>最近</div>
+
+			<div class='propertyValue'>
+				<input class='CminDistance' value="<%= minDistance %>" type='text' />
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>最远</div>
+
+			<div class='propertyValue'>
+				<input class='CmaxDistance' value="<%= maxDistance %>" type='text' />
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>位置</div>
+			<div class='propertyValue'>[&nbsp;
+				<input class='Cpositionx' value="<%= position[0] %>" type='input'/>&nbsp;,&nbsp;
+				<input class='Cpositiony' value="<%= position[1] %>" type='input'/>&nbsp;,&nbsp;
+				<input class='Cpositionz' value="<%= position[2] %>" type='input'/>
+				&nbsp;]
+			</div>
+		</li>
+		<!-- Up 属性 -->
+		<!-- 穿透 -->
+	</ul>
+</div>

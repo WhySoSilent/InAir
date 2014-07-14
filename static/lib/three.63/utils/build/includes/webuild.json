@@ -1,0 +1,15 @@
+[
+	"src/../../3dview/lib/webgl/sim.edit.js",
+	"src/../../3dview/js/Loader.js",
+	"src/../../3dview/js/JSONModel.js",
+	"src/../../3dview/js/MainCamera.js",
+	"src/../../3dview/js/Controls.js",
+	"src/../../3dview/js/Lights.js",
+	"src/../../3dview/js/SkyBox.js",
+	"src/../../3dview/js/Animation.js",
+	"src/../../3dview/js/Config.js",
+	"src/../../3dview/js/FeatureViewer.js",
+	"src/../../3dview/js/Audio.js",
+	"src/../../3dview/js/modelViewer.js",
+	"src/../../3dview/js/comment.js"
+]

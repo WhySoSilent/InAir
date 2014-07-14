@@ -1,0 +1,147 @@
+/**
+ * 
+ * div#canvasOpts
+ * div#canvasCover -- div#startingLever
+ * canvas  -- logo		.displayLogo
+ * div#WebGLContainer
+ */
+div#WebGLContainer {
+	position: relative;
+	width:100%;
+	padding-top: 60%;	//保持宽高比
+	box-sizing: border-box;
+	background: #eee;
+	// background-image: url(/img/view/shadow_x.png);
+	background-size: auto 17%;
+	background-repeat: repeat-x;
+	background-position: bottom;
+
+	canvas {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		//
+		//background: #efefef url('../../img/view/canvasBgGrid.jpg');
+
+		&.displayLogo {
+			background-image: url(/img/view/logo_text.png);
+			background-size: auto 17%;
+			background-repeat: no-repeat;
+			background-position: bottom right;
+		}
+	}
+
+
+
+	div#canvasOpts {
+		position: absolute;
+		bottom: 50%;
+		right: -50px;
+		z-index: 10;
+
+		// div#canvasOpts 下面的直接子元素 a 都是按钮
+		&>a {
+			display: block;
+			box-sizing: border-box;
+			height: 36px;
+			width: 36px;
+			text-align: center;
+			margin-top: 8px;
+			color: #fff;
+			background: #222;
+			border-radius: 18px;
+
+			&:hover {
+				color: #444;
+				background: #fff;
+				border: 1px solid #444;
+			}
+
+			span {
+				font-size: 120%;
+				line-height: 36px;
+			}
+		}
+	}
+
+	div#canvasCover {
+		display: none;
+		height: 100%;
+		width: 100%;
+
+		// &.display {
+		// 	display: block;
+		// }
+	}
+
+	&.fullScreen {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		padding: 0;
+		z-index: 10;
+
+		div#canvasCover.display {
+			display: block;
+		}
+		div#canvasOpts {
+			right: 30px;
+		}
+
+	}
+
+	&.editerOne {
+
+		div#canvasCover.display {
+			display: block;
+		}
+
+		div#canvasOpts {
+			right: 30px;
+		}
+	}
+}
+
+div#startingLever {
+	color: #fff;
+
+	div#headlineArea {
+		margin-top: 160px;
+
+		h1 {
+			font-size: 120px;
+			font-weight: lighter;
+		}
+		h3 {
+			color: #eee;
+			max-height: 200px;
+			margin-bottom: 60px;
+		}
+	}
+	//加载进度条
+	div#loadingBar {
+		width: 100%;
+		height: 9px;
+		border-bottom: 2px solid #fff;
+
+		div.loadedWidth {
+			width: 1%;
+			height: 100%;
+			background: #fff;
+		}
+	}
+	
+	div#startingPreviewArea {
+		margin-top: 160px;
+		img {
+			width: 100%;
+		}
+	}
+	
+}
+

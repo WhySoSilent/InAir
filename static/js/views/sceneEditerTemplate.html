@@ -1,0 +1,325 @@
+<div id="scene" ng-controller='sceneController'>
+	<!-- 视角 Camera -->
+	<expander class='expander' expander-title='ViewPort'>
+		<div class="aSectionRow">
+			<div class="percent60">
+				<h5 class="label">Front (近截面): </h5>
+			</div>
+			<div class="percent40">
+				<input type="text" ng-model='camera.front' format />
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent60">
+				<h5 class="label">Back (远截面): </h5>
+			</div>
+			<div class="percent40">
+				<input type="text" ng-model='camera.back' format />
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent60">
+				<h5 class="label">Fog (雾): </h5>
+			</div>
+			<div class="percent40">
+				<input type="text" ng-model='camera.fog' format />
+			</div>
+		</div>
+		<div class="labelRow" ng-if="false">
+			<h5>LookAt</h5>
+		</div>
+		<div class="aSectionRow" ng-if="false">
+			<div class="percent25">
+				<h5 class="label">X: {{ camera.lookAt[0] | number }}</h5>
+			</div>
+			<!-- <div class="percent25">
+				<input type="text" class="cell" ng-model="camera.lookAt[0]" format />
+			</div> -->
+			<div class="percent25">
+				<h5 class="label">Y: {{ camera.lookAt[1] | number }}</h5>
+			</div>
+			<!-- <div class="percent25">
+				<input type="text" class="cell" ng-model="camera.lookAt[1]" format />
+			</div> -->
+			<div class="percent25">
+				<h5 class="label">Z: {{ camera.lookAt[2] | number }}</h5>
+			</div>
+			<!-- <div class="25">
+				<input type="text" class="cell" ng-model="camera.lookAt[2]" format />
+			</div> -->
+			<div class="percent25">
+				<button ng-click="getCameraTarget()"><span class="glyphicon glyphicon-camera"></span></button>
+			</div>
+		</div>
+		<div class="labelRow">
+			<h5>Position (初始位置)</h5>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent25">
+				<h5 class="label">X: {{ camera.position[0] | number }}</h5>
+			</div>
+			<!-- <div class="percent25">
+				<input type="text" class="cell" ng-model="camera.position[0]" format />
+			</div> -->
+			<div class="percent25">
+				<h5 class="label">Y: {{ camera.position[1] | number }}</h5>
+			</div>
+			<!-- <div class="percent25">
+				<input type="text" class="cell" ng-model="camera.position[1]" format />
+			</div> -->
+			<div class="percent25">
+				<h5 class="label">Z: {{ camera.position[2] | number }}</h5>
+			</div>
+			<!-- <div class="percent25">
+				<input type="text" class="cell" ng-model="camera.position[2]" format />
+			</div> -->
+			<div class="percent25">
+				<button ng-click="getCameraPosition()"><span class="glyphicon glyphicon-camera"></span></button>
+			</div>
+		</div>
+	</expander>
+	<!-- Control -->
+	<expander class='expander' expander-title='Control'>
+<!-- 		<div class="aSectionRow">
+			<div class="percent40">
+				<h5 class="label">Type: </h5>
+			</div>
+			<div class="percent60">
+				<select ng-model="control.type">
+					<option value="TrackballControls">TrackballControls</option>
+					<option value="OrbitControls">OrbitControls</option>
+				</select>
+			</div>
+		</div> -->
+		<div class="aSectionRow">
+			<div class="percent80">
+				<h5 class="label">缩放: </h5>
+			</div>
+			<div class="percent20">
+				<div w-switch witch-enable='control.zoom'></div>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent80">
+				<h5 class="label">平移 (鼠标右键): </h5>
+			</div>
+			<div class="percent20">
+				<div w-switch witch-enable='control.pan'></div>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent80">
+				<h5 class="label">自动旋转: </h5>
+			</div>
+			<div class="percent20">
+				<div w-switch witch-enable='control.autoRotate'></div>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent40">
+				<h5 class="label">最远距离: </h5>
+			</div>
+			<div class="percent40">
+				<input type="text" ng-model='control.maxDistance' format />
+			</div>
+			<div class="percent20">
+				<button ng-click="getCameraDistance(1)"><span class="glyphicon glyphicon-camera"></span></button>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent40">
+				<h5 class="label">最近距离: </h5>
+			</div>
+			<div class="percent40">
+				<input type="text" ng-model='control.minDistance' format />
+			</div>
+			<div class="percent20">
+				<button ng-click="getCameraDistance(0)"><span class="glyphicon glyphicon-camera"></span></button>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent40">
+				<h5 class="label">限制北纬: </h5>
+			</div>
+			<div class="percent60">
+				<input type="range" ng-model='control.minPolarAngle' format min="0" max="1.57"   step="0.1"/>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent40">
+				<h5 class="label">限制南纬: </h5>
+			</div>
+			<div class="percent60">
+				<input type="range" ng-model='control.maxPolarAngle' format min="1.57" max="3.14"   step="0.1"/>
+			</div>
+		</div>
+	</expander>
+	<!-- Lights -->
+	<div class="aSectionRow">
+		<div class="percent20">
+			<h5 class="label">编辑:</h5>
+		</div>
+		<div class="percent80">
+			<select ng-model="light" ng-options="l as l.name for l in lights">
+			</select>
+		</div>
+	</div>
+	<expander class='expander' expander-title='Lights'>
+		<!-- <div class="aSectionRow">
+			<div class="percent20">
+				<h5 class="label">编辑:</h5>
+			</div>
+			<div class="percent80">
+				<select ng-model="light" ng-options="l.name for l in lights">
+				</select>
+			</div>
+		</div> -->
+		<div>
+			<!-- 灯光参数调整区域 -->
+			<div class="aSectionRow">
+				<div class="percent20">
+					<h5 class="label">Type :</h5>
+				</div>
+				<div class="percent80">
+					<select ng-model="light.type">
+						<option value="PointLight">PointLight</option>
+						<option value="AmbientLight">AmbientLight</option>
+						<option value="DirectionalLight">DirectionalLight</option>
+					</select>
+				</div>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<h5 class="label">Name : </h5>
+				</div>
+				<div class="percent80">
+					<input type="text" ng-model='light.name' />
+				</div>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<h5 class="label">Color:</h5>
+				</div>
+				<div class="percent20">
+					<input type="color" ng-model='light.color' />
+				</div>
+				<div class="percent40">
+					<input type="text" class="cell" ng-model='light.color' />
+				</div>
+			</div>
+			<div class="aSectionRow" ng-hide='light.intensity == undefined'>
+				<div class="percent20">
+					<h5 class="label">强度:</h5>
+				</div>
+				<div class="percent60">
+					<input type="range" ng-model='light.intensity' max="2" min="0" step="0.1" format/>
+				</div>
+				<div class="percent20">
+					<input type="text" class="cell" ng-model='light.intensity' format />
+				</div>
+			</div>
+			<div class="aSectionRow" ng-hide='light.distance == undefined'>
+				<div class="percent20">
+					<h5 class="label">衰减:</h5>
+				</div>
+				<div class="percent60">
+					<input type="range" ng-model='light.distance' max="1000" min="0" step="1" format/>
+				</div>
+				<div class="percent20">
+					<input type="text" class="cell" ng-model='light.distance' format />
+				</div>
+			</div>
+			<div class="labelRow">
+				<h5>灯光位置</h5>
+			</div>
+			<div class="aSectionRow" ng-hide='light.position == undefined'>
+				<div class="percent25">
+					<h5 class="label">X: {{ light.position[0] | number }}</h5>
+				</div>
+<!-- 				<div class="percent25">
+					<input type="text" class="cell" ng-model="light.position[0]" format/>
+				</div> -->
+				<div class="percent25">
+					<h5 class="label">Y: {{ light.position[1] | number }}</h5>
+				</div>
+<!-- 				<div class="percent25">
+					<input type="text" class="cell" ng-model="light.position[1]" format/>
+				</div> -->
+				<div class="percent25">
+					<h5 class="label">Z: {{ light.position[2] | number }}</h5>
+				</div>
+<!-- 				<div class="percent25">
+					<input type="text" class="cell" ng-model="light.position[2]" format />
+				</div> -->
+				<div class="percent25">
+					<button ng-click="getLightPosition()"><span class="glyphicon glyphicon-camera"></span></button>
+				</div>
+			</div>
+		</div>
+	</expander>
+	<!-- Fog -->
+<!-- 	<expander class='expander' expander-title='Fog'>
+	</expander> -->
+	<!-- Background -->
+	<expander class='expander' expander-title='Background'>
+		<div class="aSectionRow">
+			<div class="percent40">
+				<h5 class="label">背景类型</h5>
+			</div>
+			<div class="percent60">
+				<select ng-model="background.type">
+					<option value="color">背景颜色</option>
+					<option value="image">背景图片</option>
+				</select>
+			</div>
+		</div>
+		<div class="labelRow">
+			<h5>背景颜色</h5>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<input type="color" ng-model='background.color' />
+			</div>
+			<div class="percent20">
+				<input type="text" class="cell" ng-model='background.color' />
+			</div>
+		</div>
+		<div class="labelRow">
+			<h5>背景图片</h5>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<div w-resource-control r-position="background" r-format="" r-name="bg" r-handdle="background.image" model-id="{{modelId}}"></div>
+			</div>
+			<div class="percent80">
+				<h5 class="label">{{ background.image }}</h5>
+			</div>
+		</div>
+	</expander>
+	<!-- Environment -->
+	<expander class='expander' expander-title='Environment'>
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='environment.enable'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !environment.enable}'>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<div w-envcontrol env-lib='envTextures' handdle-witch='environment.skybox' model-id="{{modelId}}"></div>
+				</div>
+				<div class="percent80">
+					<h5 class="label">{{ environment.skybox }}_px.jpg</h5>
+				</div>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent60">
+					<h5 class="label">Skybox Size:</h5>
+				</div>
+				<div class="percent40">
+					<input type="text" ng-model="environment.size" format />
+ 				</div>
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+</div>

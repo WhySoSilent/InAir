@@ -1,0 +1,408 @@
+<!-- 像躲避瘟疫一样避免过早优化 -->
+<div id="material" ng-controller='materialController'>
+	<div class="aSectionRow">
+		<div class="percent20">
+			<h5 class="label">编辑:</h5>
+		</div>
+		<div class="percent80">
+			<select ng-model="material" ng-options="m.name group by m.group for m in materials">
+			</select>
+		</div>
+		<!-- <div class="percent20" ng-if="material.group">
+			<button ng-click="copyMaterial()">克隆</button>
+		</div> -->
+	</div>
+	<!-- Name -->
+	<expander class='expander' expander-title='Name / Group'>
+		<div class="labelRow">
+			<h5>可以重命名</h5>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent100">
+				<input type="text" ng-model='material.name' ng-change="do()"/>
+			</div>
+		</div>
+		<div class="aSectionRow" ng-hide="material.group">
+			<div class="percent40">
+				<h5 class="label">选取组</h5>
+			</div>
+			<div class="percent60">
+				<select ng-model="material.group" ng-options="m.group as m.group for m in materials">
+				</select>
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent40">
+				<h5 class="label" ng-show="material.group">重命名所在组</h5>
+				<h5 class="label" ng-hide="material.group">新建组</h5>
+			</div>
+			<div class="percent60">
+				<input type="text" ng-model="material.group" />
+			</div>
+		</div>
+		<div class="aSectionRow" ng-show="material.group">
+			<div class="percent100">
+				<button class="importantOne" ng-click="removeCurrentGroup()">移出当前组</button>
+			</div>
+		</div>
+	</expander>
+	<!-- Shade -->
+	<expander class='expander' expander-title='渲染'>
+		<!-- Visible -->
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='material.visible'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !material.visible }'>
+			<!-- Shading -->
+			<div class="labelRow">
+				<h5>Shading</h5>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent100">
+					<select ng-model="material.shading">
+						<option value="phong">phong</option>
+						<option value="basic">basic</option>
+						<option value="lambert">lambert</option>
+					</select>
+				</div>
+			</div>
+			<!-- Blending -->
+			<div class="labelRow">
+				<h5>Blending</h5>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent100">
+					<select ng-model="material.blending">
+						<option value="NoBlending">NoBlending</option>
+						<option value="NormalBlending">NormalBlending</option>
+						<option value="AdditiveBlending">AdditiveBlending</option>
+						<option value="SubtractiveBlending">SubtractiveBlending</option>
+						<option value="MultiplyBlending">MultiplyBlending</option>
+						<option value="CustomBlending">CustomBlending</option>
+					</select>
+				</div>
+			</div>
+			<!-- Side -->
+			<div class="labelRow">
+				<h5>Side</h5>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent40">
+					<h5 class="label">材质显示为</h5>
+				</div>
+				<div class="percent60">
+					<select ng-model="material.side">
+						<option value="FrontSide">FrontSide</option>
+						<option value="BackSide">BackSide</option>
+						<option value="DoubleSide">DoubleSide</option>
+					</select>
+				</div>
+			</div>
+			<!-- Wireframe -->
+			<div class="labelRow">
+				<h5>Wireframe</h5>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent80">
+					<h5 class="label">显示为线框</h5>
+				</div>
+				<div class="percent20">
+					<div w-switch witch-enable='material.wireframe'></div>
+				</div>
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+	<!-- Color -->
+	<expander class='expander' expander-title='Colors'>
+		<div class="aSectionRow">
+			<div class="percent25">
+				<input type="color" ng-model='material.color' />
+			</div>
+			<div class="percent25" ng-show="material.shading != 'basic'">
+				<input type="color" ng-model='material.ambient' />
+			</div>
+			<div class="percent25" ng-show="material.shading == 'phong'">
+				<input type="color" ng-model='material.specular' />
+			</div>
+			<div class="percent25" ng-show="material.shading != 'basic'">
+				<input type="color" ng-model='material.emissive' />
+			</div>
+		</div>
+		<div class="aSectionRow">
+			<div class="percent25">
+				<input type="text" class="cell" ng-model='material.color' />
+			</div>
+			<div class="percent25" ng-show="material.shading != 'basic'">
+				<input type="text" class="cell" ng-model='material.ambient' />
+			</div>
+			<div class="percent25" ng-show="material.shading == 'phong'">
+				<input type="text" class="cell" ng-model='material.specular' />
+			</div>
+			<div class="percent25" ng-show="material.shading != 'basic'">
+				<input type="text" class="cell" ng-model='material.emissive' />
+			</div>
+		</div>
+		<div class="labelRow">
+			<div class="percent25">
+				<h5>Didduse</h5>
+			</div>
+			<div class="percent25" ng-show="material.shading != 'basic'">
+				<h5>Ambient</h5>
+			</div>
+			<div class="percent25" ng-show="material.shading == 'phong'">
+				<h5>Specular</h5>
+			</div>
+			<div class="percent25" ng-show="material.shading != 'basic'">
+				<h5>Emissive</h5>
+			</div>
+			
+		</div>
+	</expander>
+	<!-- Ambient -->
+<!-- 	<expander ng-show="material.shading != 'basic'" class='expander' expander-title='Ambient'>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<input type="color" ng-model='material.ambient' />
+			</div>
+			<div class="percent20">
+				<input type="text" class="cell" ng-model='material.ambient' />
+			</div>
+		</div>
+	</expander> -->
+	<!-- Specular -->
+<!-- 	<expander ng-show="material.shading == 'phong'" class='expander' expander-title='Specular'>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<input type="color" ng-model='material.specular' />
+			</div>
+			<div class="percent20">
+				<input type="text" class="cell" ng-model='material.specular' />
+			</div>
+		</div>
+	</expander> -->
+	<!-- Emissive -->
+<!-- 	<expander ng-show="material.shading != 'basic'" class='expander' expander-title='Emissive'>
+		<div class="aSectionRow">
+			<div class="percent20">
+				<input type="color" ng-model="material.emissive"/>
+			</div>
+			<div class="percent40">
+				<input type="text" class="cell" ng-model="material.emissive" />
+			</div>
+		</div>
+	</expander> -->
+	<!-- Shininess -->
+	<expander ng-show="material.shading == 'phong'" class='expander' expander-title='反光度'>
+		<div class="aSectionRow">
+			<div class="percent80">
+				<input type="range" ng-model='material.shininess' format/>
+			</div>
+			<div class="percent20">
+				<input type="text" class="cell" ng-model='material.shininess' format />
+			</div>
+		</div>
+	</expander>
+	<!-- Combine -->
+<!-- 	<expander class='expander' expander-title='Combine'>
+		<div class="aSectionRow">
+			<div class="percent100">
+				<select ng-model="material.combine">
+					<option value="MultiplyOperation">MultiplyOperation</option>
+					<option value="MixOperation">MixOperation</option>
+					<option value="AddOperation">AddOperation</option>
+				</select>
+			</div>
+		</div>
+	</expander> -->
+	<!-- Transparent | Opacity-->
+	<expander class='expander' expander-title='Transparent'>
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='material.transparent'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !material.transparent }'>
+			<!-- opacity -->
+			<div class="labelRow">
+				<h5>不透明度</h5>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent80">
+					<input type="range" ng-model="material.opacity" max="1" min="0" step="0.1" format/>
+				</div>
+				<div class="percent20">
+					<input type="text" class="cell" ng-model="material.opacity" format />
+				</div>
+			</div>
+			<!-- RefractionRatio -->
+			<!-- 折射率是只能在有透明度的情况下才可用吗??? -->
+			<div class="labelRow">
+				<h5>折射率</h5>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent80">
+					<input type="range" ng-model="material.refractionRatio" max="2.5" min="1" step="0.1" format/>
+				</div>
+				<div class="percent20">
+					<input type="text" class="cell" ng-model="material.refractionRatio" format />
+				</div>
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+	<!-- DiffuseMap -->
+	<expander class='expander' expander-title='map'>
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='material.enableMap'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !material.enableMap}'>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<div w-imgcontrol
+						texture-lib='textures'
+						handdle-witch='material.map'
+						repeat-one='material.mapRepeat'
+						wrap-one='material.mapWrap'
+						filter-one='material.mapFilter'
+						model-id="{{modelId}}"></div>
+				</div>
+				<div class="percent80">
+					<h5 class="label">{{ material.map }}</h5>
+				</div>
+				
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+	<!-- SpecularMap -->
+	<expander class='expander' expander-title='SpecularMap'>
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='material.enableSpecular'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !material.enableSpecular}'>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<div w-imgcontrol
+						texture-lib='textures'
+						handdle-witch='material.specularMap'
+						repeat-one='material.specularRepeat'
+						wrap-one='material.specularWrap'
+						filter-one='material.specularFilter'
+						model-id="{{modelId}}"></div>
+				</div>
+				<div class="percent80">
+					<h5 class="label">{{ material.specularMap }}</h5>
+				</div>
+				
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+	<!-- BumpMap -->
+	<expander ng-show="material.shading == 'phong'" class='expander' expander-title='BumpMap'>
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='material.enableBump'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !material.enableBump}'>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<div w-imgcontrol
+						texture-lib='textures'
+						handdle-witch='material.bumpMap'
+						repeat-one='material.bumpRepeat'
+						wrap-one='material.bumpWrap'
+						filter-one='material.bumpFilter'
+						model-id="{{modelId}}"></div>
+				</div>
+				<div class="percent80">
+					<h5 class="label">{{ material.bumpMap }}</h5>
+				</div>
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+	<!-- NormalMap -->
+	<expander ng-show="material.shading == 'phong'" class='expander' expander-title='NormalMap'>
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='material.enableNormal'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !material.enableNormal}'>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<div w-imgcontrol
+						texture-lib='textures'
+						handdle-witch='material.normalMap'
+						repeat-one='material.normalRepeat'
+						wrap-one='material.normalWrap'
+						filter-one='material.normalFilter'
+						model-id="{{modelId}}"></div>
+				</div>
+				<div class="percent80">
+					<h5 class="label">{{ material.normalMap }}</h5>
+				</div>
+				
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+	<!-- LightMap -->
+	<expander class='expander' expander-title='LightMap'>
+		<div class="aSwitch">
+			<span>开关</span>
+			<div w-switch witch-enable='material.enableLight'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !material.enableLight}'>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<div w-imgcontrol
+						texture-lib='textures'
+						handdle-witch='material.lightMap'
+						repeat-one='material.lightRepeat'
+						wrap-one='material.lightWrap'
+						filter-one='material.lightFilter'
+						model-id="{{modelId}}"></div>
+				</div>
+				<div class="percent80">
+					<h5 class="label">{{ material.lightMap }}</h5>
+				</div>
+				
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+	<!-- EnviromentMap | Reflectivity -->
+	<expander class='expander' expander-title='环境贴图'>
+		<div class="aSwitch">
+			<span>开关</span> 
+			<div w-switch witch-enable='material.enableEnv'></div>
+		</div>
+		<div class="content" ng-class='{ disable : !material.enableEnv}'>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<div w-envcontrol env-lib='envTextures' handdle-witch='material.envMap' model-id="{{modelId}}"></div>
+				</div>
+				<div class="percent80">
+					<h5 class="label">{{ material.envMap }}_px.jpg</h5>
+				</div>
+			</div>
+			<div class="aSectionRow">
+				<div class="percent20">
+					<h5 class="label">反射率</h5>
+				</div>
+				<div class="percent60">
+					<input type="range" ng-model='material.reflectivity' max='1' min='0' step='0.01' format/>
+				</div>
+				<div class="percent20">
+					<input type="text" class="cell" ng-model='material.reflectivity' format />
+				</div>
+				
+			</div>
+			<div class="disableCover"></div>
+		</div>
+	</expander>
+</div>

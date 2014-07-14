@@ -1,0 +1,6 @@
+div.switch{overflow:hidden;width:50px;height:25px;background:#444;border-radius:3px;}div.switch span{float:left;box-sizing:border-box;}
+div.switch span.l,div.switch span.r{display:inline-block;height:100%;width:65%;text-align:center;color:#ff5f5f;background:#333;}
+div.switch span.l{transition:width .2s;width:0;color:#6eb96e;}
+div.switch span.button{display:inline-block;width:35%;height:100%;background:#e2e2e2;border:1px solid #444;border-radius:3px;}
+div.switch.off span.l{width:0;}
+div.switch.on span.l{width:65%;}

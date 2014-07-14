@@ -1,0 +1,1 @@
+通过给div#fileDropArea 添加 .dragenter 来提示文件的拖放状态

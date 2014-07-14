@@ -1,0 +1,53 @@
+<!-- Template id: temp_lightProperty -->
+<div class="lightProperty">
+	<h3><%= name %></h3>
+	<ul class='properties'>
+		<li>
+			<div class='propertyName'>Type</div>
+
+			<div class='propertyValue'>
+				<select  class="Ltype form-control" >
+                    <option value="AmbientLight" <%= type === 'AmbientLight' ? 'selected' : '' %>>环境光</option>
+                    <option value="PointLight" <%= type === 'PointLight' ? 'selected' : '' %>>点光源</option>
+                    <option value="DirectionalLight" <%= type === 'DirectionalLight' ? 'selected' : '' %>>平行光</option>
+                    <!-- 半球光 -->
+                    <!-- 面光 -->
+                </select>
+			</div>
+		</li>
+		<li>
+			<div class='propertyName'>Color</div>
+
+			<div class='propertyValue'>
+				<input class='Lcolor' value="<%= color %>" type='color'/>
+			</div>
+		</li>
+		<% if( type === "PointLight" || type === "DirectionalLight" ) { %>
+		<li>
+			<div class='propertyName'>强度</div>
+
+			<div class='propertyValue'>
+				<input class='Lintensity' value="<%= intensity %>" type='text' />
+			</div>
+		</li>
+		<% } if ( type === "PointLight" ) { %>
+		<li>
+			<div class='propertyName'>衰减</div>
+
+			<div class='propertyValue'>
+				<input class='Ldistance' value="<%= distance %>" type='text' />
+			</div>
+		</li>
+		<% } if( type !== "AmbientLight" ) { %>
+		<li>
+			<div class='propertyName'>位置</div>
+			<div class='propertyValue'>[&nbsp;
+				<input class='Lpositionx' value="<%= position[0] %>" type='input'/>&nbsp;,&nbsp;
+				<input class='Lpositiony' value="<%= position[1] %>" type='input'/>&nbsp;,&nbsp;
+				<input class='Lpositionz' value="<%= position[2] %>" type='input'/>
+				&nbsp;]
+			</div>
+		</li>
+		<% } %>
+	</ul>
+</div>

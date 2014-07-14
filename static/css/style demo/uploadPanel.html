@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<title>Upload Panel</title>
+<link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="./styles/upload.css">
+<style type="text/css">
+body {
+	background: #efefef url(../img/canvasBgGrid.png);
+}
+div#uploadPanel {
+	width: 460px;
+	height: 500px;
+	margin: 50px auto;
+}
+</style>
+</head>
+<body>
+	<div id="uploadPanel" class="panel">
+		<div id="fileDropArea">
+			
+		</div>
+		<div>
+			<div class="progress">
+				<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+				<span class="sr-only">60% Complete</span>
+				</div>
+			</div>
+			<!-- <h3 class="text-center">提示 <small>暂时只支持Obj文件上传</small></h3> -->
+			<blockquote>
+				<p class="text-warning">Obj文件直接上传，不带贴图和材质文件</p>
+				<small>目前<cite title="2月7日">仅支持Obj</cite></small>
+			</blockquote>
+			
+			<form action="___" method="post" enctype="multipart/form-data" class="text-center">
+				<input type="file" name="___" placeholder="选取文件">
+				<button class="btn btn-primary btn-lg" href="___">&nbsp;&nbsp;上传&nbsp;&nbsp;</button>
+			</form>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="../lib/common/jquery-1.10.2.min.js"></script>
+<script type="text/javascript">
+$(function() {
+	if (window.FileReader) {
+		//文件拖放API
+		$("div#fileDropArea").bind("dragenter",function(e) {
+			$(this).addClass("dragenter");
+		});
+		$("div#fileDropArea").bind("dragleave",function(e) {
+			$(this).removeClass("dragenter");
+		});
+
+		$("div#fileDropArea").bind("dragover",function(e) {
+			//拖动进行过程中阻止浏览器默认行为带来的重定向
+			e.stopPropagation();
+			e.preventDefault();
+		});
+
+		function doDrop(e) {
+			//先阻止默认行为
+			e.stopPropagation();
+			e.preventDefault();
+
+			function isModelFile(type) {
+				switch (type) {
+				case 'Model/obj ':
+				case 'Model/max':
+				case 'Model/mnt':
+				case 'Model/zip':
+				case 'Model/rar':
+					return true;
+				default:
+					return false;
+				}
+			}
+
+			var files = e.dataTransfer.files;
+			for (var i = 0, file; file = files[i]; i++) {
+
+				var fileType = file.type ? file.type : 'n/a',
+					isObj = isModelFile(fileType);
+				if (isObj) {
+					//...可以上传文件
+
+				} else {
+					alert('不是模型文件');
+				}
+			}
+		}
+		// cnt = document.getElementById('ididid');
+		// cnt.addEventListener('drop', doDrop, false);
+	} else {
+		//...不支持文件拖放，降级处理
+	}
+});
+</script>
+</html>

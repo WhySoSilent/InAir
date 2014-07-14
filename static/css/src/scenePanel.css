@@ -1,0 +1,4 @@
+div#scenePanel{position:fixed;width:0;height:100%;z-index:100;}div#scenePanel a.builder{display:block;position:absolute;left:30px;top:20px;}div#scenePanel a.builder img.avatar{display:inline-block;width:60px;height:60px;border-radius:30px;}
+div#scenePanel div.hiddenArea{position:absolute;right:0;top:0;width:310px;height:100%;padding-top:160px;transition:right .3s;background:#fff;}div#scenePanel div.hiddenArea.show{right:-310px;}
+div#scenePanel div.hiddenArea div#des{padding:10px;min-height:100px;background:#f8f8f8;border-top:1px solid #eee;}
+div#scenePanel div.hiddenArea input#link{position:absolute;bottom:30px;left:15px;width:280px;}

@@ -1,0 +1,8 @@
+#shader{font-size:24px;color:#9C9C9C;margin-top:15px;}#shader:hover{color:#eee;}
+div#shaderPanel{box--sizing:border-box;position:fixed;right:-310px;width:310px;height:100%;z-index:100;overflow-y:auto;background:#fff;transition:right .3s;padding:60px 10px 10px 10px;}div#shaderPanel.show{right:0;}
+div#shaderPanel div.aEdit{display:none;margin-top:20px;}div#shaderPanel div.aEdit.show{display:block;}
+div.materialProperty ul.properties,div.sceneProperty ul.properties,div.lightProperty ul.properties{margin:0;padding:0;list-style-type:none;}div.materialProperty ul.properties li,div.sceneProperty ul.properties li,div.lightProperty ul.properties li{box-sizing:border-box;height:50px;}div.materialProperty ul.properties li:nth-child(odd),div.sceneProperty ul.properties li:nth-child(odd),div.lightProperty ul.properties li:nth-child(odd){background:#F7F7F7;}
+div.materialProperty .propertyName,div.sceneProperty .propertyName,div.lightProperty .propertyName{display:inline-block;width:80px;line-height:50px;}
+div.materialProperty .propertyEnable,div.sceneProperty .propertyEnable,div.lightProperty .propertyEnable{display:inline-block;width:50px;text-align:center;}
+div.materialProperty .propertyValue,div.sceneProperty .propertyValue,div.lightProperty .propertyValue{display:inline-block;float:right;text-align:right;}div.materialProperty .propertyValue img,div.sceneProperty .propertyValue img,div.lightProperty .propertyValue img{display:inline-block;height:50px;width:50px;}
+div.materialProperty .propertyValue input[type=color],div.sceneProperty .propertyValue input[type=color],div.lightProperty .propertyValue input[type=color]{height:40px;width:40px;padding:0;}

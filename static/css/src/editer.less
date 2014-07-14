@@ -1,0 +1,62 @@
+div#editer {
+	div#common, div#scene ,div#material{
+		// display: none;
+	}
+
+	&.common {
+		div#common {
+			// display: block;
+		}
+		div#editerPageTag>div:nth-child(1) {
+			background: #2b2b2b;
+		}
+	}
+
+	&.scene {
+		div#scene {
+			// display: block;
+		}
+		div#editerPageTag>div:nth-child(2) {
+			background: #2b2b2b;
+		}
+	}
+
+	&.material {
+		div#material {
+			// display: block;
+		}
+		div#editerPageTag>div:nth-child(3) {
+			background: #2b2b2b;
+		}
+	}
+}
+
+div#editerPageTag {
+	height: 40px;
+
+	&>div {
+		box-sizing: border-box;
+		width: 33.333%;
+		height: 100%;
+		display: inline-block;
+		float: left;
+		color: #AFAFAF;
+		line-height: 40px;
+		text-align: center;
+
+		&>a {
+			height: 100%;
+			width: 100%;
+			display: block;
+			color: #C4C4C4;
+		}
+
+		&:hover {
+			background: #2b2b2b;
+		}
+
+		&.active {
+			background: #2b2b2b;
+		}
+	}
+}

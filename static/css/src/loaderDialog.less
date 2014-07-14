@@ -1,0 +1,138 @@
+.dialog {
+	display: none;
+	color: #808080;
+	//cursor: default;
+	//pointer-events: none;
+	border-radius: 3px;
+	background-color: white;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 362px;
+	margin-left: -181px;
+	//删了兼容代码
+	box-shadow: 0 4px 6px rgba( 0, 0, 0, .4 );
+	text-align: center;
+	//opacity: 0;
+	//删了兼容代码
+	transition: opacity .3s ease-out;
+	//transition: transform .5s ease-out;	//??? 为变换设置过渡
+	font-size: 13px;
+	z-index: 1000;
+
+	-webkit-transform: translate(0,60px);	//???
+
+	//载入面板上面的介绍部分
+	.intro {
+		height: 183px;
+		position: relative;
+
+		//介绍图片部分的容器，暂时先是头像
+		.intro_aPart {
+			
+			margin-top: 26px;
+
+			img.intro_image.avatar {
+				width: 80px;
+				height: 80px;
+				margin: 0 auto;
+				border-radius: 40px;
+			}
+			p {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 108px;
+				text-align: center;
+				font-size: 14px;
+			}
+
+		}
+
+	}
+	//下部分的载入进度条、运行按钮
+	.stripe {
+		border-top: 1px solid #e8e8e8;
+		border-bottom: 1px solid #e8e8e8;
+		background-color: #f8f8f8;
+		position: absolute;
+		left: 0;
+		right: 0;
+
+		
+
+		.stripe_aPart {
+			position: absolute;
+			padding: 14px 0 16px 0;
+			height: 100%;
+			width: 100%;
+			background-color: #f8f8f8;	//加颜色可以相互遮住彼此
+		}
+
+		//加载情况
+		#preloaderBar {
+
+			//进度条
+			.preloader {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				box-sizing: border-box;
+				width: 246px;
+				height: 10px;
+				padding: 1px;
+				margin-left: -123px;
+				border-radius: 2px;
+				border: 1px solid #9a9a9a;
+				background-color: #c6c6c6;
+				
+
+				.bar {
+					height: 100%;
+					border-radius: 1px;
+					background-color: #609af4;
+				}
+				
+			}
+		}
+
+		#startModelViewerRun {
+			margin-top: 7px;
+		}
+	}
+	
+}
+
+#loaderDialog {
+	opacity: 0;
+	
+	//pointer-events: auto;
+	height: 263px;
+	width: 326px;
+	margin-top: -131px;
+	margin-left: -163px;
+
+	.stripe {
+		height: 80px;
+		top: 183px;
+		border-radius: 0 0 3px 3px;
+	}
+	&.show {
+		opacity: 1;
+		display: block;		//??? display 属性和 过渡属性的配合
+		-webkit-transform: translate(0,0);
+	}
+}
+
+.easeInExpo {
+	-webkit-transition: all 500ms cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	-moz-transition: all 500ms cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	-ms-transition: all 500ms cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	-o-transition: all 500ms cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	transition: all 500ms cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	-webkit-transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	-moz-transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	-ms-transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	-o-transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+	transition-timing-function: cubic-bezier(0.950, 0.050, 0.795, 0.035);
+}

@@ -1,0 +1,15 @@
+        <h4 class="title">Share & Embed<a class="helpLink" href="/help.html#howToShare" target="_black" >help</a></h4>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button id="copyPageAddress" class="btn btn-default" type="button">Share</button>
+          </span>
+          <input type="text" id="pageAddress" class="form-control" value="http://localhost/scenes/<%= id %>" readonly="readonly" onmouseover="this.select()" onclick="this.select()"/>
+        </div><!-- /input-group -->
+        <div class="input-group">
+          <span class="input-group-btn">
+            <button id="copyEmbedCode" class="btn btn-default" type="button">Embed</button>
+          </span>
+          <input type="text" id="embedCode" class="form-control"
+                value='<iframe width="640" height="480" src="http://localhost/iframe/<%= id %>" allowFullScreen ></iframe>'
+                readonly="readonly" onmouseover="this.select()" onclick="this.select()"/>
+        </div><!-- /input-group -->

@@ -1,0 +1,31 @@
+div.expander>.title{box-sizing:content-box;height:30px;padding:.3em .6em;line-height:30px;color:white;background-color:#2c2c2c;border-top:1px solid #4B4B4B;border-bottom:1px solid #0f0f0f;cursor:pointer;}div.expander>.title:hover{background:#242424;}
+div.expander>.body{background:#575757;}div.expander>.body div.aSwitch{box-sizing:content-box;position:relative;height:25px;padding:5px 10px;background:#757575;border-bottom:1px solid #8F8F8F;}div.expander>.body div.aSwitch>span{font-size:13px;}
+div.expander>.body div.aSwitch div.switch{position:absolute;top:5px;right:10px;}
+div.expander>.body div.content{position:relative;}div.expander>.body div.content.disable div.disableCover{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(128, 128, 128, 0.7);}
+div.labelRow{box-shadow:border-box;height:30px;padding:5px 10px;color:#979797;}div.labelRow h5{line-height:30px;margin:0;}
+div.aSectionRow{box-sizing:border-box;min-height:60px;width:100%;padding:5px 10px;}
+div.aSectionRow div[class^="percent"],div.labelRow div[class^="percent"]{box-sizing:border-box;float:left;height:100%;}
+div.aSectionRow div.percent10,div.labelRow div.percent10{width:10%;}
+div.aSectionRow div.percent15,div.labelRow div.percent15{width:15%;}
+div.aSectionRow div.percent20,div.labelRow div.percent20{width:20%;}
+div.aSectionRow div.percent25,div.labelRow div.percent25{width:25%;}
+div.aSectionRow div.percent30,div.labelRow div.percent30{width:30%;}
+div.aSectionRow div.percent40,div.labelRow div.percent40{width:40%;}
+div.aSectionRow div.percent50,div.labelRow div.percent50{width:50%;}
+div.aSectionRow div.percent60,div.labelRow div.percent60{width:60%;}
+div.aSectionRow div.percent80,div.labelRow div.percent80{width:80%;}
+div.aSectionRow div.percent90,div.labelRow div.percent90{width:90%;}
+div.aSectionRow div.percent100,div.labelRow div.percent100{width:100%;float:none;}
+div.aSectionRow h4.label,div.aSectionRow h5.label,div.aSectionRow h6.label{line-height:50px;margin:0;color:#BDBDBD;text-align:left;}
+div.aSectionRow button{box-sizing:border-box;height:40px;width:100%;margin-top:5px;color:#838383;background:#444;border:1px solid #575757;border-radius:6px;}div.aSectionRow button:hover{background:#292929;}
+div.aSectionRow button.importantOne{color:#CCCCCC;background:#912929;border:1px solid #630000;}div.aSectionRow button.importantOne:hover{background:#AA3333;}
+div.aSectionRow input[type=color]{height:50px;width:50px;padding:0;border:0;background:#575757;}
+div.aSectionRow input[type=range]{display:block;width:90%;height:50px;margin-left:5%;}
+div.aSectionRow input[type=text],div.aSectionRow input[type=number]{background:#727272;height:40px;width:100%;padding-left:10px;color:#ebebeb;box-sizing:border-box;border:1px solid #A2A2A2;border-radius:6px;}div.aSectionRow input[type=text].cell,div.aSectionRow input[type=number].cell{width:46px;height:24px;padding:0px;margin:13px 0 0 7px;background:#333;text-align:center;}
+div.aSectionRow input[type=file]{box-sizing:border-box;display:block;width:100%;height:40px;margin-top:10px;padding:10px 0;background:#383838;}
+div.aSectionRow textarea{box-sizing:border-box;width:100%;min-height:210px;margin:0px;padding:6px 6px 6px 10px;color:#ebebeb;background-color:#727272;border:1px solid #A2A2A2;}
+div.aSectionRow select{width:100%;height:30px;background:#929292;border:1px solid #C2C2C2;margin-top:10px;}div.aSectionRow select>option{height:30px;}
+div.aSectionRow div.imgControl{position:relative;box-sizing:border-box;height:50px;width:50px;border:1px solid #888;}div.aSectionRow div.imgControl img{height:100%;width:100%;}
+div.aSectionRow div.imgControl div.popPanel{display:none;box-sizing:border-box;position:absolute;top:45px;left:0;min-height:200px;width:280px;color:#fff;background:#303030;border:1px solid #1A1A1A;border-radius:3px;box-shadow:2px 2px 9px rgba(0, 0, 0, 0.7);}div.aSectionRow div.imgControl div.popPanel>div.jiantou{position:absolute;top:-20px;left:12px;height:0px;width:0px;border-top:10px solid rgba(0, 0, 0, 0);border-left:10px solid rgba(255, 0, 0, 0);border-right:10px solid rgba(0, 255, 0, 0);border-bottom:10px solid #2E2E2E;background:rgba(39, 39, 39, 0);}
+div.aSectionRow div.imgControl div.popPanel a.close{display:block;height:20px;width:20px;line-height:20px;text-align:center;color:#9E9E9E;background:#141414;border-radius:20px;}
+div.aSectionRow div.imgControl.display div.popPanel{display:block;}

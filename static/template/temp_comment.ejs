@@ -1,0 +1,14 @@
+<div class="aComment">
+  <div class="row">
+    <div class="col-xs-1">
+      <img src="/img/avatar/random<%= (function(){return Math.floor(Math.random()*10+1);})() %>.jpg">
+    </div>
+    <div class="col-xs-11">
+      <div class="info">
+        <p class="name"><%= (function(){if(anonymous) {return 'Anonymous';} else {return mail;}})() %></p>
+        <p class="commentContent"><%= content %></p>
+        <p class="time"><%= (function(time){return new Date(time).toLocaleString(); })(when) %></p>
+      </div>
+    </div>
+  </div>
+</div>
